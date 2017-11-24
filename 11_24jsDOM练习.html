@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title id="mytitle">lalala</title>
+	<script>
+		var el = document.getElementById("mytitle");
+		el.innerHTML='hello!';
+	</script>
+</head>
+
+<body bgcolor="rgb(110,150,223)"; onload="checkCookies()">
+	<script>
+		function checkCookies()
+		{
+			if (navigator.checkieEnabled==true)
+				{
+					alert('已启用cookie')
+				}
+			else
+				{
+					alert('未启用cookie')
+				}
+		}
+	</script>
+
+	<div id="1">
+		<h1 style="color:rgb(184,43,97);"； onclick="changetext(this)">感谢你</h1>
+		<script>
+			function changetext(id)
+			{
+				id.innerHTML='非常感谢！'
+			}
+		</script>
+	</div>
+
+	<div id='2'>
+		<p style="color: white">点击显示当前时间</p>
+	
+		<button id="time" onclick="displayDate()">点击查看</button>
+		<script>
+			function displayDate()
+			{
+				document.getElementById('time').innerHTML=Date();
+			}
+		</script>
+	</div>
+
+	<div id='3'>
+		<button id='time2'>尝试一下显示时间</button>
+		<script>
+			document.getElementById('time2').onclick=function(){displayDate2()};
+			function displayDate2()
+			{
+				document.getElementById('time2').innerHTML=Date();
+			}
+		</script>
+	</div>
+
+	<div id="4">
+		<p id="111"; style="color: white">wawawawwa</p>
+		<button type="button" onclick="document.getElementById('111').style.color='yellow'" >变变变
+		</button>
+		<script>
+		document.getElementById('111').innerHTML='111';
+		</script>
+	</div>
+
+	<div id='5' style="color: white">
+		请输入英文字符：<input type="text" id="fname" onchange="myFunction()">
+		<script>
+			function myFunction()
+			{
+				var x=document.getElementById('fname');
+				x.value=x.value.toUpperCase();
+
+			}
+		</script>
+	</div>
+
+	<div id='6' onmouseover='mOver(this)' onmouseout="mOut(this)" style="background-color: green; width:120px; height:40px; padding:50px; color: #ffffff; ">这里这里！
+
+		<script>
+			function mOver(obj)
+			{
+				obj.innerHTML="快拿开！"
+			}
+			function mOut(obj)
+			{
+				obj.innerHTML="快移过来！"
+			}
+		</script>
+	</div>
+
+	<div id="7" onmousedown="mDown(this)" onmouseup="mUp(this)" style="background-color: green; color: #ffffff; width: 90px; height: 20px; padding: 40px; font-size: 15px;">点住我
+	
+		<script>
+			function mDown(obj)
+			{
+				obj.style.backgroundColor="#1ec5e5";
+				obj.innerHTML='快松开！'
+			}
+			function mUp(obj)
+			{
+				obj.style.backgroundColor="green";
+				obj.innerHTML='快点住！'
+			}
+		</script>
+	</div>
+
+	<div id="8">
+		<h2 onclick="change(this)" style="color: white">点一下你就知道</h2>
+		<script style="color:white">
+			function change(id)
+			{
+				id.innerHTML='哈哈哈'
+			}
+		</script>
+	</div>
+
+	<div id="9">
+		<p id="p1" style="color: green">一个段落</p>
+		<p id="p2" style="color: green">另一个段落</p>
+		<script>
+			var para=document.createElement('p');
+			var node=document.createTextNode('新段落');
+			para.appendChild(node);
+
+			var element=document.getElementById('9');
+			element.appendChild(para);
+		/*	var parent=document.getElementById('9');
+			var child=document.getElementById('p1');
+			parent.removeChild(child);
+		*/
+		</script>
+	</div>
+</body>
+</html>

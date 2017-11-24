@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body> 
+	<!--构造器函数内部定义对象 -->
+	<div id="1">
+		<script>
+			function person(firstname,lastname,age,eyecolor)
+			{
+				this.firstname=firstname;
+				this.lastname=lastname;
+				this.age=age;
+				this.eyecolor=eyecolor;
+
+				this.changeName=changeName;
+				this.changeAge=changeAge;
+				function changeName(name)
+				{
+					this.lastname=name;
+				}
+				function changeAge(age)
+				{
+					this.age=age;
+				}
+			}
+			myMother = new person("hu",'jianying',52,'black')
+			myMother.changeName('cjj');
+			document.write(myMother.firstname);
+			myMother.changeAge(77);
+			document.write(myMother.age);
+		</script>
+	</div>
+
+	<!-- 循环遍历对象属性 -->
+	<div id="2">
+		<button onclick='myFunction()'>点击循环遍历属性</button>
+		<p id="name"></p>
+
+		<script>
+			function myFunction()
+			{
+				var x;
+				var txt='';
+				var person={fname:'Bill', lname:'Gates', age:56};
+
+				for (x in person)
+				{
+					txt=txt + person[x];
+				}
+				document.getElementById('name').innerHTML=txt;
+			}
+		</script>
+	</div>
+
+	<!-- 浮点数相加不准确练习 -->
+	<div id="3">
+		<p id="number"></p>
+		<script>
+			var x=0.2+0.1
+			document.getElementById('number').innerHTML=x;
+		</script>
+	</div>
+
+	<!-- 对象练习 -->
+	<div id="4">
+		<script>
+			var word='hello world!';
+			var myDate=new Date()
+			var cars=new Array(3)
+			document.write(word.length)
+			document.write('<Br/>'+word.toUpperCase())
+			document.write('<Br/>'+myDate)
+			cars[0]='benz'
+			cars[1]='bmw'
+			cars[2]='volvo'
+			document.write('<Br/>'+cars)
+
+			var myB=new Boolean();
+			document.write('<Br/>'+myB)
+			var myB=new Boolean(0);
+			document.write('<Br/>'+myB)
+			var myB=new Boolean(null);
+			document.write('<Br/>'+myB)
+			var myB=new Boolean('');
+			document.write('<Br/>'+myB)
+			var myB=new Boolean(false);
+			document.write('<Br/>'+myB)
+			var myB=new Boolean(NaN);
+			document.write('<Br/>'+myB)
+
+			var myBoolean=new Boolean(1);
+			document.write('<Br/>'+myBoolean)
+			var myBoolean=new Boolean(true);
+			document.write('<Br/>'+myBoolean)
+			var myBoolean=new Boolean("true");
+			document.write('<Br/>'+myBoolean)
+			var myBoolean=new Boolean("false");
+			document.write('<Br/>'+myBoolean)
+			var myBoolean=new Boolean("Bill Gates");
+			document.write('<Br/>'+myBoolean)
+
+			document.write('<Br/>'+'<Br/>'+Math.round(3.3))
+			document.write('<Br/>'+Math.random())
+			document.write('<Br/>'+Math.floor(Math.random()*11))
+
+			//正则表达式RegExp
+			var patt1=new RegExp('e');
+			document.write('<Br/>'+'<Br/>'+patt1.test('The best things in life are free'));
+			
+			patt1.compile("e"+"d");
+			document.write('<Br/>'+'<Br/>'+patt1.test('The best things in life are free'));
+
+		</script>
+</body>
+</html>
